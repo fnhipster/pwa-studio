@@ -19,6 +19,11 @@ const typePolicies = {
             customerCart: {
                 keyArgs: () => 'Cart'
             }
+            // message: {
+            //     read() {
+            //         return 'Hello World';
+            //     }
+            // }
         }
     },
     AppliedGiftCard: {

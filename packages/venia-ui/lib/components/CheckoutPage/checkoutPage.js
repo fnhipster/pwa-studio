@@ -29,6 +29,8 @@ import ItemsReview from './ItemsReview';
 
 import defaultClasses from './checkoutPage.css';
 
+import HelloWorld from '../HelloWorld';
+
 const errorIcon = <Icon src={AlertCircleIcon} size={20} />;
 
 const CheckoutPage = props => {
@@ -371,6 +373,7 @@ const CheckoutPage = props => {
                     defaultMessage: 'Checkout'
                 })}
             </StoreTitle>
+            <HelloWorld />
             {checkoutContent}
             {addressBookElement}
             {signInElement}
