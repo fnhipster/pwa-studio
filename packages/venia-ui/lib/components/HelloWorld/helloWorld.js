@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { gql, useLazyQuery } from '@apollo/client';
 import { useTypePolicies } from '@magento/peregrine';
 
 const GET_TEXT = gql`
@@ -21,7 +21,11 @@ const HelloWorld = () => {
         }
     });
 
-    const { data, loading, error } = useQuery(GET_TEXT);
+    const [runQuery, { data, loading, error }] = useLazyQuery(GET_TEXT);
+
+    useEffect(() => {
+        runQuery();
+    }, [runQuery]);
 
     useEffect(() => {
         console.log(`Received`);
